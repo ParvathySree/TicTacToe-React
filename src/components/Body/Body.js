@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Body.css';
-import oImg from '../../util/images/o.png';
-import xImg from '../../util/images/x-img.png';
+import oImg from '../util/images/o.png';
+import xImg from '../util/images/x-img.png';
 
 let boardArr = ["","","","","","","","",""];
 
