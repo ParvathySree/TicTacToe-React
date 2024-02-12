@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/TicTacToe-React/static/css/main.37b747b6.css",
-    "main.js": "/TicTacToe-React/static/js/main.8e02eefc.js",
+    "main.js": "/TicTacToe-React/static/js/main.1a453963.js",
+    "static/media/fail.mp3": "/TicTacToe-React/static/media/fail.fb628403f3e44cd320cc.mp3",
+    "static/media/win.mp3": "/TicTacToe-React/static/media/win.6af278fa8752e4432b85.mp3",
     "index.html": "/TicTacToe-React/index.html",
     "main.37b747b6.css.map": "/TicTacToe-React/static/css/main.37b747b6.css.map",
-    "main.8e02eefc.js.map": "/TicTacToe-React/static/js/main.8e02eefc.js.map"
+    "main.1a453963.js.map": "/TicTacToe-React/static/js/main.1a453963.js.map"
   },
   "entrypoints": [
     "static/css/main.37b747b6.css",
-    "static/js/main.8e02eefc.js"
+    "static/js/main.1a453963.js"
   ]
 }
