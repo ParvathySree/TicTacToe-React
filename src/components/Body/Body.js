@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './Body.css';
 import oImg from '../util/images/o.png';
 import xImg from '../util/images/x-img.png';
+import failAudioFile from '../util/audio/fail.mp3'; // Import audio files directly
+import winAudioFile from '../util/audio/win.mp3';
+
 
 let boardArr = ["","","","","","","","",""];
 
 const Body = () => {
+    const [failAudio] = useState(new Audio(failAudioFile));
+    const [winAudio] = useState(new Audio(winAudioFile));
     let [count,setCount] = useState(0);
     let [end,setEnd] = useState(false);
     let [winner,setWinner] = useState("");
@@ -17,11 +22,19 @@ const Body = () => {
     },[] )
 
     useEffect(() => {
-        end && setTitle(`Congratulations ${winner} !`)
+        const title = 'Congratulations ' + winner + ' !'
+        end && setTitle(title) 
+        console.log(winner)
+        if(winner!==""){
+            winAudio.play();
+        }
+        // setWinner("")
+        
     }, [winner])
 
     useEffect(() =>{
-        count === boardArr.length && setTitle('Better luck next time!')
+        count === boardArr.length && setTitle('Better luck next time!') && setWinner("") ;
+        
     },[count])
     
 
@@ -74,12 +87,13 @@ const Body = () => {
     const setResult = (player) => {
         setWinner(player);
         setEnd(true);
-        
     }
 
     const resetGame = () => {
         setEnd(false);
         setTitle('TIC TAC TOE')
+        setCount(0)
+        setWinner("")
         boardArr = ["","","","","","","","",""];
         const elements = document.querySelectorAll('.grid-item');
         elements.forEach(element => {
